@@ -1,5 +1,5 @@
 -- Import the Graph class
-require("src.graph")
+local Graph = require("src.graph")
 
 -- Utility module
 local util = {}
@@ -28,6 +28,7 @@ function util.createGraphFromFile(filename)
 
     local graphType = lines[1]
     local graph = Graph.new()
+    print(graph.bfs)
     local addEdgeFunction = graphType == "D" and graph.addEdgeDirected or graph.addEdgeUndirected
 
     for i = 3, #lines do
@@ -41,4 +42,3 @@ function util.createGraphFromFile(filename)
 end
 
 return util
-
